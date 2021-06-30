@@ -11,4 +11,4 @@ oscilloscope
 
 ![function_generetor](https://user-images.githubusercontent.com/60459286/124017576-df61c780-d9b4-11eb-8123-fb4373364552.jpg)
 
-Experimental setup
+                                          Figure 1: Experimental setup
