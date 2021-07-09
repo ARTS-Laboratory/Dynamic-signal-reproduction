@@ -1,7 +1,7 @@
 # How to run:
-run 'dynamic_signal_generation.vi'
-use the data(data.text) as a input file.
-This code is generated signal as real time. Here 1st column is measuring time and second one for acceleration.
+run 'dynamic_signal_generation.vi'.
+Use the data(data.txt) as a input file.
+This code is generated signal as real time. Here first column is for time and second one for acceleration.
 
 # Hardware :
 
