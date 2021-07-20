@@ -1,8 +1,11 @@
-# Run:
-run 'dynamic_signal_generation.vi'.
-Use the data(data.txt) as a input file. This code is generated signal in real-time. Here first column is for time and second one for acceleration.
+# Dynamic signal reproduction
+A simple LabVIEW VI for the real-time reproduction of signals saved a .json file. 
 
-# Hardware :
+## Run:
+run 'dynamic_signal_generation.vi'.
+Use the data (data.txt) as an input file. This code reproduces the data in data.txt as a real-time signal. Here the first column is for time and the second one for acceleration.
+
+## Hardware :
 
 NI-9263 4-Channel (Voltage output module), cDAQ-9178 8-Slot, USB CompactDAQ Chassis, oscilloscope
 
