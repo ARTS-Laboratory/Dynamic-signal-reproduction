@@ -5,8 +5,10 @@ import matplotlib.pyplot as plt
 data60 = loadtxt("DROPBEAR NI 9260 synthesis.csv", delimiter=',')
 data63 = loadtxt("DROPBEAR NI 9263 synthesis.csv", delimiter=',')
 acc = loadtxt("X_test.csv", delimiter=',')
+t = loadtxt("t_test.csv", delimiter=',')
 
 acc = np.reshape(acc.T, acc.size)
+t = np.reshape(t.T, t.size)
 # data_length = acc.size
 
 # plt.figure()
@@ -45,4 +47,38 @@ savetxt("9260.csv", data60[time_offset60:time_offset60+20000],delimiter=',')
 savetxt("9260acc.csv", acc[:20000],delimiter=',')
 savetxt("9263.csv", data63, delimiter=',')
 savetxt("9263acc.csv", acc[:data63.size], delimiter=',')
+#%% analysis of single-sample data with 500 us, 200 us, and 80 us.
 
+data500 = loadtxt("signal generation 500 us.csv", delimiter=',')
+t500 = np.array([0.0005 *i for i in range(data500.size)])
+data200 = loadtxt("signal generation 200 us.csv", delimiter=',')
+t200 = np.array([0.0002 *i for i in range(data200.size)])
+data80 = loadtxt("signal generation 80 us.csv", delimiter=',')
+t80 = np.array([0.00008 *i for i in range(data80.size)])
+
+plt.figure()
+plt.plot((t-t[0]),acc)
+plt.plot(t80,data80)
+
+plt.figure()
+plt.plot(data80)
+
+time_offset500 = 727
+plt.figure(figsize=(7,3))
+plt.plot((t-t[0])[:500],acc[:500])
+plt.plot(t500[0:100],data500[time_offset500:time_offset500 + 100])
+
+time_offset200 = 0
+plt.figure(figsize=(7,3))
+plt.plot(acc[:500])
+plt.plot(data200[time_offset60:time_offset60 + 500])
+
+time_offset80 = 17000
+plt.figure(figsize=(7,3))
+plt.plot((t-t[0])[:500],acc[:500])
+plt.plot(t80[:200],data80[time_offset80:time_offset80 + 200])
+
+
+acc = loadtxt("X_test.csv", delimiter=',')
+
+acc = np.reshape(acc.T, acc.size)
