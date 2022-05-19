@@ -63,20 +63,29 @@ plt.plot(t80,data80)
 plt.figure()
 plt.plot(data80)
 
-time_offset500 = 727
+time_offset500 = 680
 plt.figure(figsize=(7,3))
 plt.plot((t-t[0])[:500],acc[:500])
-plt.plot(t500[0:100],data500[time_offset500:time_offset500 + 100])
+plt.plot(t500[0:50],data500[time_offset500:time_offset500 + 50])
+plt.xlim((0,.020))
+plt.savefig("500 us signal.png", dpi=500)
 
-time_offset200 = 0
-plt.figure(figsize=(7,3))
-plt.plot(acc[:500])
-plt.plot(data200[time_offset60:time_offset60 + 500])
-
-time_offset80 = 17000
+time_offset200 = 14617
 plt.figure(figsize=(7,3))
 plt.plot((t-t[0])[:500],acc[:500])
-plt.plot(t80[:200],data80[time_offset80:time_offset80 + 200])
+plt.plot(t200[:500],data200[time_offset200:time_offset200 + 500])
+plt.xlim((0,.020))
+plt.savefig("200 us signal.png", dpi=500)
+
+time_offset80 = 40622
+plt.figure(figsize=(7,3))
+plt.plot((t-t[0])[:500],acc[:500])
+plt.plot(t80[:500],data80[time_offset80:time_offset80 + 500])
+plt.xlim((0,.020))
+plt.xlabel("time (s)")
+plt.ylabel("signal (V)")
+plt.tight_layout()
+plt.savefig("80 us signal.png", dpi=500)
 
 
 acc = loadtxt("X_test.csv", delimiter=',')
