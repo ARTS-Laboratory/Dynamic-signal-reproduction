@@ -1,4 +1,4 @@
-# Dynamic signal reproduction
+# Dynamic Signal Reproduction
 A simple LabVIEW VI for the real-time reproduction of signals saved a .csv file.
 
 ## Run:
